@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="neo_ryu.chiffremagique.MainActivity"
+    android:background="@drawable/background"
+    android:contextClickable="false">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout2">
+
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/choixGirl" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Trouverez-vous le chiffre mystère ?"
+                android:id="@+id/txt_Title"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="(compris entre 1 et 100 )"
+                android:id="@+id/txt_Desc"
+                android:layout_below="@+id/txt_Title"
+                android:layout_alignParentStart="true"
+                android:textStyle="italic"
+                android:textSize="15dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout"
+            android:weightSum="1">
+
+
+            <EditText
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/input_Saisie"
+                android:text="100"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textColorHighlight="@color/abc_btn_colored_borderless_text_material"
+                android:layout_below="@+id/txt_Desc"
+                android:layout_toStartOf="@+id/img_Button"
+                android:layout_weight="0.16" />
+
+            <ImageButton
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:id="@+id/img_Button"
+                android:background="@drawable/gobutton"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentBottom="true" />
+
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="5"
+                android:id="@+id/txt_Essais"
+                android:textSize="30dp"
+                android:textStyle="bold|italic"
+                android:textColor="#EE7700"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="139dp"
+                android:id="@+id/imageView"
+                android:background="@drawable/bulle2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Une surprise si vous y arrivez ! =)"
+                    android:id="@+id/txt_Indices"
+                    android:paddingLeft="10dp"
+                    android:textSize="18dp"
+                    android:maxWidth="190dp"
+                android:layout_marginStart="36dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="35dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continuer ?"
+                android:id="@+id/bt_TryAgain"
+                android:layout_marginStart="41dp"
+                android:layout_below="@+id/txt_Indices"
+                android:layout_alignStart="@+id/txt_Indices"
+                android:textStyle="normal"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Vos réponses :"
+            android:id="@+id/txt_RepTitle"
+            android:layout_above="@+id/txt_RepList"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_RepList"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/txt_Desc"
+            android:layout_alignBottom="@+id/img_Girl"
+            android:textSize="25dp"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_Girl"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txt_Indices" />
+
+</RelativeLayout>
